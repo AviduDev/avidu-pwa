@@ -1,0 +1,54 @@
+---
+// Component imports
+import { Layout } from "@globals"
+import { Img } from "@globals"
+
+// fetching data
+
+const query = {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({
+    query: `
+      {
+        projects {
+          name
+          slug
+          mainImage {
+            url
+            width
+            height
+          }
+        }
+        relatedServices{
+          name
+          slug
+        }
+      }`,
+  }),
+};
+
+const response = await fetch(import.meta.env.HYGRAPH_ENDPOINT, query);
+const json = await response.json();
+const projects = json.data.projects;
+const relatedServices = json.data.relatedServices;
+---
+
+<Layout title="Astro PWA Starter">
+	<main>
+		<h1>hi those are my projects</h1>
+		{
+		  projects.map((project) => (
+			<div>
+			  <a href={`/projects/${project.slug}`}>{project.name}</a>
+			  <Img
+				src={project.mainImage.url}
+				alt={project.name}
+				width={project.mainImage.width}
+				height={project.mainImage.height}
+			  />
+			</div>
+		  ))
+		}
+	  </main>
+</Layout>
