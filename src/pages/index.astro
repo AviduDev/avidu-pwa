@@ -3,6 +3,12 @@
 import { Layout } from "@globals"
 import { Img } from "@globals"
 
+import { Hero } from "@home"
+import { Intro } from "@home"
+import { Ttl } from "@home"
+import { ServiceCard } from "@home"
+import { WhyMe } from "@home"
+
 // fetching data
 
 const query = {
@@ -36,6 +42,29 @@ const relatedServices = json.data.relatedServices;
 
 <Layout title="Astro PWA Starter">
 	<main>
+
+    <!-- hero -->
+    <section>
+      <Hero title="front-end developer/ website designer" />
+    </section>
+    <!-- introduction -->
+    <section>
+      <Intro />
+    </section>
+    <!-- services -->
+    <section>
+      <Ttl big="Services" small="what i do" />
+      <ServiceCard title="Business Website Creation" href="#" />
+    </section>
+    <!-- why me -->
+    <section>
+      <Ttl big="why me" small="point of difference" />
+      <WhyMe />
+    </section>
+    <!-- process -->
+    <!-- recent work without images -->
+    <!-- questions -->
+    <!-- -------------------------------------------- -->
 		<h1>hi those are my projects</h1>
 		{
 		  projects.map((project) => (

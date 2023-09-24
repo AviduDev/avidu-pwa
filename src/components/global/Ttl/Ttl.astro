@@ -1,0 +1,29 @@
+---
+interface Props {
+    small: string;
+    big: string;
+}
+
+const { big, small } = Astro.props;
+---
+
+<h2>
+    <span class="big">{big}</span>
+    <span class="small">{small}</span>
+</h2>
+
+<style>
+    h2 {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-end;
+        border-bottom: 1px solid black;
+    }
+
+    .small {
+        font-size: var(--p-lg);
+        font-weight: normal;
+        text-transform: capitalize;
+    }
+</style>

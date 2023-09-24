@@ -1,0 +1,38 @@
+---
+interface Props {
+  title: string;
+  href: string;
+}
+
+const { title, href } = Astro.props;
+---
+
+<ul>
+  <li>
+    
+    <svg
+      class="icon"
+      width="100px"
+      height="100px"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+      ><path
+        d="M16.646 15.646L19.293 13H3v-1h16.293l-2.647-2.646.707-.707 3.854 3.853-3.854 3.854z"
+      ></path><path fill="none" d="M0 0h24v24H0z"></path></svg
+    >
+    <a href={href}>
+    <h3 class="title">
+      {title}
+    </h3>
+</a>
+  </li>
+</ul>
+
+<style>
+  li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+</style>
