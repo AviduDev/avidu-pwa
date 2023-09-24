@@ -3,17 +3,10 @@
 import { Layout } from "@globals"
 import { Img } from "@globals"
 import { Ttl } from "@globals"
-
-// import { Hero } from "@component/*"
-// import { Intro } from "@component/*"
-// import { Ttl } from "@globals"
-// import { ServiceCard } from "@component/*"
-// import { WhyMe } from "@component/*"
-
-import Hero from "../components/home/Hero.astro"
-import Intro from "../components/home/Intro.astro"
-import ServiceCard from "../components/home/ServiceCard.astro"
-import WhyMe from "../components/home/WhyMe.astro"
+import { Hero } from "@home"
+import { Intro } from "@home"
+import { ServiceCard } from "@home"
+import { WhyMe } from "@home"
 
 // fetching data
 
@@ -32,10 +25,6 @@ const query = {
             height
           }
         }
-        relatedServices{
-          name
-          slug
-        }
       }`,
   }),
 };
@@ -43,10 +32,9 @@ const query = {
 const response = await fetch(import.meta.env.HYGRAPH_ENDPOINT, query);
 const json = await response.json();
 const projects = json.data.projects;
-const relatedServices = json.data.relatedServices;
 ---
 
-<Layout title="Astro PWA Starter">
+<Layout title="Avidu | Website Designer and Front-end Developer">
 	<main>
 
     <!-- hero -->
@@ -75,7 +63,7 @@ const relatedServices = json.data.relatedServices;
 		{
 		  projects.map((project) => (
 			<div>
-			  <a href={`/projects/${project.slug}`}>{project.name}</a>
+			  <a href={`/my-works/${project.slug}`}>{project.name}</a>
 			  <Img
 				src={project.mainImage.url}
 				alt={project.name}

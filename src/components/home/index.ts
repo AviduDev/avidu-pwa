@@ -1,4 +1,4 @@
-export { Hero } from "./Hero.astro"
-export { Intro } from "./Intro.astro"
-export { ServiceCard } from "./ServiceCard.astro"
-export { WhyMe } from "./WhyMe.astro"
+export { Hero } from "./Hero"
+export { Intro } from "./Intro"
+export { ServiceCard } from "./ServiceCard"
+export { WhyMe } from "./WhyMe"

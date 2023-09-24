@@ -9,6 +9,10 @@
 		"baseUrl": ".",
 		"paths": {
 			"@globals": ["src/components/global"],
+			"@home": ["src/components/home"],
+			"@about": ["src/components/about"],
+			"@which": ["src/components/which"],
+			"@works": ["src/components/works"],
 			"@component/*": ["src/components/*"],
 			"@style/*": ["src/styles/*"],
 			"@util/*": ["utils/*"],
