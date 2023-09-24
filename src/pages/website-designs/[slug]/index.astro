@@ -1,0 +1,42 @@
+---
+// Component imports
+import { Layout } from "@globals"
+
+
+// fetching data
+export async function getStaticPaths() {
+  const response = await fetch(import.meta.env.HYGRAPH_ENDPOINT, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+    },
+    body: JSON.stringify({
+      query: `
+        {
+        relatedServices {
+            name
+            slug       
+          }
+        }`,
+    }),
+  });
+
+  const json = await response.json();
+
+  const paths = json.data.relatedServices.map((service) => ({
+    params: { slug: service.slug },
+    props: { service },
+  }));
+
+  return paths;
+}
+
+const {service} = Astro.props
+---
+
+<Layout title="about me">
+	<main>
+        <h1>{service.name}</h1>
+	</main>
+</Layout>

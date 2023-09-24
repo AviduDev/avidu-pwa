@@ -1,10 +1,39 @@
 ---
 // Component imports
 import { Layout } from "@globals"
+import { Img } from "@globals"
+
+// fetching data
+
+const query = {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({
+    query: `
+      {
+        relatedServices{
+          name
+          slug
+        }
+      }`,
+  }),
+};
+
+const response = await fetch(import.meta.env.HYGRAPH_ENDPOINT, query);
+const json = await response.json();
+const relatedServices = json.data.relatedServices;
 ---
 
 <Layout title="about me">
 	<main>
         <h1>My services</h1>
+
+        {
+            relatedServices.map((project) => (
+              <div>
+                <a href={`/website-designs/${project.slug}`}>{project.name}</a>
+              </div>
+            ))
+          }
 	</main>
 </Layout>
