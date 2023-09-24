@@ -1,0 +1,114 @@
+/* --------------css reset-------------- */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+/* --------------fonts-------------- */
+html {
+  font-family: Arial, Helvetica, sans-serif;
+  scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  text-transform: uppercase;
+}
+
+a {
+  color: inherit;
+}
+
+/* --------------text sizing-------------- */
+
+:root {
+  --h1: 2.5rem;
+  --h2: 2rem;
+  --h3: 1.5rem;
+  --h4: 1rem;
+
+  --p: 1rem;
+  --p-sm: 0.75rem;
+  --p-lg: 1.25rem; 
+
+  --bg: #f4f3ef;
+}
+
+h1 {
+  font-size: var(--h1);
+  text-transform: uppercase;
+}
+
+/* mobile text sizes */
+h1 {
+  font-size: var(--h1);
+}
+
+h2 {
+  font-size: var(--h2);
+}
+
+h3 {
+  font-size: var(--h3);
+}
+
+h4 {
+  font-size: var(--h4);
+}
+
+h5 {
+  font-size: var(--h5);
+}
+
+p {
+  font-size: var(--p);
+}
+
+a {
+  font-size: var(--p);
+}
+
+.p-sm {
+  font-size: var(--p-sm);
+}
+
+.p {
+  font-size: var(--p);
+}
+
+.p-lg {
+  font-size: var(--p-lg);
+}
+
+/* tablet text sizes */
+
+/* desktop text sizes */
+
+/* --------------default styles for elements-------------- */
+::selection {
+  background-color: #ffb300;
+}
+
+Image,
+img {
+  max-width: 100%;
+}
+/* --------------spacing for the elements-------------- */
+body {
+  padding: 1rem;
+  background-color: #f4f3ef;
+  overflow-x: hidden;
+}
+
+/* --------------responsive design media queries-------------- */
