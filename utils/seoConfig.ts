@@ -15,7 +15,7 @@ export const seoConfig = {
 		width: 1200,
 		height: 630
 	},
-	siteName: "Astro PWA Starter", // Change this to your website's name,
+	siteName: "Avidu - Website Designer", // Change this to your website's name,
 	twitter: {
 		card: "summary_large_image"
 	}
@@ -25,8 +25,8 @@ export const seoConfig = {
  * Defines the configuration for PWA webmanifest.
  */
 export const manifest: Partial<ManifestOptions> = {
-	name: "Astro PWA Starter", // Change this to your website's name.
-	short_name: "Astro PWA Starter", // Change this to your website's short name.
+	name: "Avidu - Website Designer and Front-end Developer", // Change this to your website's name.
+	short_name: "Avidu", // Change this to your website's short name.
 	description:
 		"Astro PWA Starter is an opionated Astro starter for building robust static websites.", // Change this to your websites description.
 	theme_color: "#f4f3ef", // Change this to your primary color.
